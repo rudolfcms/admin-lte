@@ -22,7 +22,7 @@
 							<div class="form-group">
 								<input type="text" name="title" value="<?=$this->title();?>" class="form-control input-lg" placeholder="Tytuł" required/>
 							</div>
-							<?php //$adminFields->textarea($this->content($parsed = false), 'form-control', 'Treść');?>
+							<?php //$adminFields->textarea($this->content($parsed = false), 'content', 'form-control', 'content', 'Treść');?>
 							<textarea class="form-control" name="content" id="content" cols="30" rows="30"><?=$this->textarea();?></textarea>
 						</div>
 
@@ -38,13 +38,13 @@
 							<div class="form-group">
 								<label>Słowa kluczowe</label>
 								<input type="text" name="keywords" value="<?=$this->keywords();?>" placeholder="Słowa kluczowe" class="form-control"/>
-								<p class="text-muted">Choć ten tag tak samo jak <u>opis</u> <b>nie wpływa</b> na pozycję strony w wynikach wyszukiwania, ale warto go uzupełnić słowami kluczowymi, z których mogą korzystać mniej znane wyszukiwarki.</p>
+								<p class="text-muted">Choć ten tag tak samo jak <u>opis</u> <b>nie wpływa</b> na pozycję strony w wynikach wyszukiwania, warto go uzupełnić słowami kluczowymi, z których mogą korzystać mniej znane wyszukiwarki.</p>
 							</div>
 
 							<div class="form-group">
-								<label>Data wyświetlana</label>
+								<label for="datetime">Data wyświetlana</label>
 								<input type="text" name="datetime" value="<?=$this->date();?>" placeholder="Data wyświetlana" class="form-control"/>
-								<?php //$adminFields->datetimePicker($this->date(), 'datetime', 'form-control', 'Data wyświetlana', true);?> 
+								<?php //$adminFields->datetimeInput($this->date(), 'datetime', 'form-control', 'datetime', 'Data wyświetlana');?> 
 								<p class="text-muted">Data dodania, wyświetlana odwiedzającym stronę. Choć można ją zmienić, zalecane jest by przedstawiała prawdziwą datę publikacji artykułu.</p>
 							</div>
 
@@ -56,7 +56,7 @@
 
 							<div class="form-group">
 								<label>Autor wyświetlany</label>
-								<input type="text" name="real_author" value="<?=$this->realAuthor();?>" placeholder="Autor wyświetlany" class="form-control"/>
+								<input type="text" name="real_author" value="<?=$this->author(false);?>" placeholder="Autor wyświetlany" class="form-control"/>
 								<p class="text-muted">Autor artykułu. Gdy pole puste, wyświetlanie jako autora osoby która dodała artykuł.</p>
 							</div>
 
@@ -64,7 +64,7 @@
 
 							<div class="form-group">
 								<label>Miniatura</label>
-								<?php //$adminFields->inputTextFilemanager($this->thumb(), 'thumb', 'form-control', 'Miniatura', $this->date());?>
+								<?php //$adminFields->pathInput($this->thumb(), 'thumb', 'form-control', 'Miniatura', 'thumb');?>
 								<input type="text" name="thumb" value="<?=$this->thumb();?>" placeholder="Miniatura" class="form-control"/>
 								<br/>
 								<div class="row">
@@ -159,10 +159,10 @@
 						</div>
 					</div>
 					<div class="box-body">
-						<p>Dodano: <b><?=$this->dateAdded();?></b></p>
-						<p>Dodał: <b><?=$this->addedBy();?></b></p>
-						<?php if($this->modifiedBy()) { ?><p>Ostatnia modyfikacja: <b><?=$this->modified();?></b></p>
-						<p>Ostatnio edytował: <b><?=$this->modifiedBy();?></b></p><?php } ?>
+						<p>Dodano: <b><?=$this->added();?></b></p>
+						<p>Dodał: <b><?=$this->adderFullName();?></b></p>
+						<?php if($this->isModified()) { ?><p>Ostatnia modyfikacja: <b><?=$this->modified();?></b></p>
+						<p>Ostatnio edytował: <b><?=$this->modifierFullName();?></b></p><?php } ?>
 						<p>Odsłon: <b><?=$this->views();?></b></p>
 						<p>zobacz: <b><a target="_blank" href="<?=$this->url();?>">link</a></b></p>
 					</div>
