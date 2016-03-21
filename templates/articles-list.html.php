@@ -1,6 +1,6 @@
 <?php include '_head.html.php'; ?>
 
-<?php if($this->isArticles()): ?>
+<?php if($this->roll->isArticles()): ?>
 <table class="table table-hover table-bordered table-striped">
 	<thead>
 		<tr>
@@ -13,26 +13,26 @@
 		</tr>
 	</thead>
 	<tbody>
-<?php while($this->haveArticles()): $this->article(); ?> 
+<?php while($this->roll->haveArticles()): $a = $this->roll->article(); ?> 
 		<tr>
-			<th><?=$this->id();?></th>
-			<td><?=$this->title();?></td>
-			<td><?=$this->views();?></td>
-			<td><?=$this->date();?></td>
-			<td><?=$this->author();?></td>
+			<th><?=$a->id();?></th>
+			<td><?=$a->title();?></td>
+			<td><?=$a->views();?></td>
+			<td><?=$a->date();?></td>
+			<td><?=$a->author();?></td>
 			<td>
-				<a href="<?=$this->editUrl();?>" class="btn btn-block btn-success btn-xs btn-flat">Edytuj</a>
-				<a href="<?=$this->deltUrl();?>" class="btn btn-block btn-warning btn-xs btn-flat">Usuń</a>
-				<a href="<?=$this->url();?>" class="btn btn-block btn-info btn-xs btn-flat">Zobacz</a>
+				<a href="<?=$a->editUrl();?>" class="btn btn-block btn-success btn-xs btn-flat">Edytuj</a>
+				<a href="<?=$a->delUrl();?>" class="btn btn-block btn-warning btn-xs btn-flat">Usuń</a>
+				<a href="<?=$a->url();?>" class="btn btn-block btn-info btn-xs btn-flat">Zobacz</a>
 			</td>
 		</tr>
 <?php endwhile;?> 
 	</tbody>
 </table>
 
-<?php if($this->isPagination()): ?> 
+<?php if($this->roll->isPagination()): ?> 
 	<nav role="navigation" class="pagination-container">
-		<?=$this->nav(['ul'=>'pagination', 'current'=>'active'], 2);?>
+		<?=$this->roll->nav(['ul'=>'pagination', 'current'=>'active'], 2);?>
 	</nav>
 <?php endif;?> 
 
