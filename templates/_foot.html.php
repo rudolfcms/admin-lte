@@ -7,10 +7,10 @@
 	<footer class="main-footer">
 		<!-- To the right -->
 		<div class="pull-right hidden-xs">
-			Anything you want
+			<?=VER_NAME;?>
 		</div>
 		<!-- Default to the left -->
-		<strong>Copyright &copy; 2015 <a href="#">Company</a>.</strong> All rights reserved.
+		<strong>&copy; <?=date('Y');?> <?=NAME;?></strong>
 	</footer>
 
 	<!-- Control Sidebar -->
@@ -93,7 +93,7 @@
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 2.1.4 -->
-<script src="<?=$this->themePath;?>/bower_components/AdminLTE/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+<script src="<?=$this->themePath;?>/bower_components/AdminLTE/plugins/jQuery/jQuery-2.2.0.min.js"></script>
 <!-- Bootstrap 3.3.5 -->
 <script src="<?=$this->themePath;?>/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
