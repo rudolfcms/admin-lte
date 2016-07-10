@@ -70,7 +70,7 @@
 <!-- /.login-box -->
 
 <!-- jQuery 2.2.0 -->
-<script src="<?=$this->themePath;?>/bower_components/AdminLTE/plugins/jQuery/jQuery-2.2.0.min.js"></script>
+<script src="<?=$this->themePath;?>/bower_components/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="<?=$this->themePath;?>/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
 <!-- iCheck -->

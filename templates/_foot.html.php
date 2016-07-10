@@ -93,7 +93,7 @@
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 2.1.4 -->
-<script src="<?=$this->themePath;?>/bower_components/AdminLTE/plugins/jQuery/jQuery-2.2.0.min.js"></script>
+<script src="<?=$this->themePath;?>/bower_components/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.5 -->
 <script src="<?=$this->themePath;?>/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
