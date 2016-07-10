@@ -32,13 +32,13 @@
 	<!-- /.login-logo -->
 	<div class="login-box-body">
 		<p class="login-box-msg">Sign in to start your session</p>
-		<?php if($this->isMessage()):?> 
+		<?php if ($this->isMessage()):?> 
 			<div class="alert alert-<?=$this->getMessage('type');?>"><?=$this->getMessage('message');?></div>
 		<?php endif;?> 
 
 		<form action="" method="post">
 			<div class="form-group has-feedback">
-				<input name="email" value="<?=$this->getNick();?>" type="email" class="form-control" placeholder="Email" required="">
+				<input name="email" value="<?=$this->getNick();?>" type="email" class="form-control" placeholder="Email" required="" autofocus="">
 				<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
 			</div>
 			<div class="form-group has-feedback">

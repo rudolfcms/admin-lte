@@ -115,12 +115,16 @@
 						<hr/>
 						<label>
 						<input type="checkbox" name="published" class="minimal"<?=($this->article->isPublished()) ? ' checked' : '';?>/>&nbsp;
-						<?php if(!$this->article->isPublished()) { ?>Zaznacz, by opublikować<?php } else { ?>Odznacz, by zamienić w szkic<?php } ?>
+						<?php if (!$this->article->isPublished()) {
+    ?>Zaznacz, by opublikować<?php 
+} else {
+    ?>Odznacz, by zamienić w szkic<?php 
+} ?>
 						</label>
 					</div>
 					
 					<div class="box-footer with-border">
-						<?php if('edit' === $this->templateType): ?><a href="<?=$this->article->delUrl();?>" class="btn text-red">Usuń</a>
+						<?php if ('edit' === $this->templateType): ?><a href="<?=$this->article->delUrl();?>" class="btn text-red">Usuń</a>
 						<input name="update" type="submit" class="btn btn-primary btn-flat pull-right" value="Aktualizuj"/><?php else: ?>
 						<input name="add" type="submit" class="btn btn-primary btn-flat pull-right" value="Dodaj"/><?php endif; ?>
 					</div> 
@@ -138,7 +142,7 @@
 						<select class="form-control select2" name="category_id">
 							<!--<option value="0">(brak)</option>
 							<?php //foreach ($this->article->categories() as $key => $value) { 
-							?><option <?php//=($value['id']===$this->article->categoryId()) ? 'selected="selected" ' : '';?>value="<?=$value['id'];?>"><?=$value['title'];?></option>
+                            ?><option <?php//=($value['id']===$this->article->categoryId()) ? 'selected="selected" ' : '';?>value="<?=$value['id'];?>"><?=$value['title'];?></option>
 							<?php //}	?>-->
 						
 						</select>
@@ -149,7 +153,7 @@
 					</div>
 				</div>
 
-				<?php if('edit' === $this->templateType): ?><!-- info box -->
+				<?php if ('edit' === $this->templateType): ?><!-- info box -->
 				<div class="box box-default">
 					<div class="box-header with-border">
 						<h3 class="box-title">Informacje</h3>
@@ -160,8 +164,12 @@
 					<div class="box-body">
 						<p>Dodano: <b><?=$this->article->added();?></b></p>
 						<p>Dodał: <b><?=$this->article->adderFullName();?></b></p>
-						<?php if($this->article->isModified()) { ?><p>Ostatnia modyfikacja: <b><?=$this->article->modified();?></b></p>
-						<p>Ostatnio edytował: <b><?=$this->article->modifierFullName();?></b></p><?php } ?>
+						<?php if ($this->article->isModified()) {
+    ?><p>Ostatnia modyfikacja: <b><?=$this->article->modified();
+    ?></b></p>
+						<p>Ostatnio edytował: <b><?=$this->article->modifierFullName();
+    ?></b></p><?php 
+} ?>
 						<p>Odsłon: <b><?=$this->article->views();?></b></p>
 						<p>zobacz: <b><a target="_blank" href="<?=$this->article->url();?>">link</a></b></p>
 					</div>

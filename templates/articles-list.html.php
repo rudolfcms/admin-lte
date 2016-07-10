@@ -1,6 +1,6 @@
 <?php include '_head.html.php'; ?>
 
-<?php if($this->loop->isItems()): ?>
+<?php if ($this->loop->isItems()): ?>
 <table class="table table-hover table-bordered table-striped">
 	<thead>
 		<tr>
@@ -13,7 +13,7 @@
 		</tr>
 	</thead>
 	<tbody>
-<?php while($this->loop->haveItems()): $a = $this->loop->item(); ?> 
+<?php while ($this->loop->haveItems()): $a = $this->loop->item(); ?> 
 		<tr>
 			<th><?=$a->id();?></th>
 			<td><?=$a->title();?></td>
@@ -30,9 +30,9 @@
 	</tbody>
 </table>
 
-<?php if($this->loop->isPagination()): ?> 
+<?php if ($this->loop->isPagination()): ?> 
 	<nav role="navigation" class="pagination-container">
-		<?=$this->loop->nav(['ul'=>'pagination', 'current'=>'active'], 2);?>
+		<?=$this->loop->nav(['ul' => 'pagination', 'current' => 'active'], 2);?>
 	</nav>
 <?php endif;?> 
 

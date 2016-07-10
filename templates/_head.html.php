@@ -119,10 +119,10 @@
 
 			<!-- Sidebar Menu -->
 			<?=$this->pageNav('main', 3,
-				['li_active'=>'active', 'root_ul'=>'sidebar-menu', 'sub_ul'=>'treeview-menu', 'li_with_ul'=>'treeview'],
-				['first_root_li'=>'<li class="header" style="text-transform: uppercase">header</li>'],
-				['li_with_ul_a_text'=>'<i class="fa fa-angle-left pull-right"></i>']
-			); ?> 
+                ['li_active' => 'active', 'root_ul' => 'sidebar-menu', 'sub_ul' => 'treeview-menu', 'li_with_ul' => 'treeview'],
+                ['first_root_li' => '<li class="header" style="text-transform: uppercase">header</li>'],
+                ['li_with_ul_a_text' => '<i class="fa fa-angle-left pull-right"></i>']
+            ); ?> 
 			<!-- /.sidebar-menu -->
 		</section>
 		<!-- /.sidebar -->

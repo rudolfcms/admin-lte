@@ -7,7 +7,7 @@
 		</div>
 
 		<div class="col-md-12">
-		<?php if($this->loop->isItems()): ?>
+		<?php if ($this->loop->isItems()): ?>
 			<table class="table table-bordered table-condensed table-hover">
 				<thead>
 					<tr>
@@ -18,7 +18,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<?php while($this->loop->haveItems()): $c = $this->loop->item(); ?> 
+					<?php while ($this->loop->haveItems()): $c = $this->loop->item(); ?> 
 						<th><?=$c->id();?></th>
 						<td><?=$c->title();?></td>
 						<td><?//=$v['count'];?></td>
@@ -40,9 +40,9 @@
 		</div>
 	</div>
 
-	<?php if($this->loop->isPagination()): ?> 
+	<?php if ($this->loop->isPagination()): ?> 
 	<nav role="navigation" class="pagination-container">
-		<?=$this->loop->nav(['ul'=>'pagination', 'current'=>'active'], 2);?>
+		<?=$this->loop->nav(['ul' => 'pagination', 'current' => 'active'], 2);?>
 	</nav>
 <?php endif;?> 
 </section>
