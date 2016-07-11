@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="<?=$this->themePath;?>/bower_components/AdminLTE/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" href="<?=$this->themePath;?>/bower_components/AdminLTE/plugins/select2/select2.min.css">
 	<link rel="stylesheet" href="<?=$this->themePath;?>/bower_components/AdminLTE/dist/css/AdminLTE.min.css">
 	<link rel="stylesheet" href="<?=$this->themePath;?>/bower_components/AdminLTE/dist/css/skins/skin-green.min.css">
 </head>

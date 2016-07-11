@@ -18,14 +18,14 @@
 					</tr>
 				</thead>
 				<tbody>
-					<?php while ($this->loop->haveItems()): $c = $this->loop->item(); ?> 
+					<?php while ($this->loop->haveItems()): $c = $this->loop->item(); ?><tr>
 						<th><?=$c->id();?></th>
 						<td><?=$c->title();?></td>
-						<td><?//=$v['count'];?></td>
+						<td><?=$c->total();?></td>
 						<td>
 							<a class="btn btn-success btn-xs btn-flat" href="<?=$c->editUrl();?>"><i class="fa fa-pencil"></i>&nbsp; Edytuj</a>
 							<a class="btn btn-warning btn-xs btn-flat" href="<?=$c->delUrl();?>"><i class="fa fa-minus"></i> <span>&nbsp; Usuń</span></a>
-							<a target="_blank" class="btn btn-info btn-xs btn-flat" href="<?//=$this->viewUrl($v['url']);?>"><i class="fa fa-eye"></i> <span>&nbsp; Zobacz</span></a>
+							<a target="_blank" class="btn btn-info btn-xs btn-flat" href="<?=$c->url();?>"><i class="fa fa-eye"></i> <span>&nbsp; Zobacz</span></a>
 						</td>
 					</tr>
 					<?php endwhile; ?>

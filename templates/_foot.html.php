@@ -95,7 +95,8 @@
 <!-- jQuery 2.1.4 -->
 <script src="<?=$this->themePath;?>/bower_components/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.5 -->
-<script src="<?=$this->themePath;?>/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?=$this->themePath;?>/bower_components/AdminLTE/bootstrap/js/bootstrap.min.js"></script><!-- Select2 -->
+<script src="<?=$this->themePath;?>/bower_components/AdminLTE/plugins/select2/select2.full.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?=$this->themePath;?>/bower_components/AdminLTE/dist/js/app.min.js"></script>
 
@@ -103,5 +104,11 @@
 		 Both of these plugins are recommended to enhance the
 		 user experience. Slimscroll is required when using the
 		 fixed layout. -->
+<script>
+	$(function () {
+    //Initialize Select2 Elements
+    	$(".select2").select2();
+    });
+</script>
 </body>
 </html>
