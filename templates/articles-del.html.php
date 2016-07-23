@@ -20,7 +20,7 @@
                 
                 <div class="box-footer with-border">
                    <a href="<?=DIR;?>/admin/articles/list" class="btn">Anuluj</a>
-                    <input name="delete" type="submit" class="btn btn-danger btn-flat pull-right" value="Usuń"/>
+                    <input name="delete" type="submit" class="btn btn-danger btn-flat pull-right" value="Usuń">
                 </div> 
             </div>
         </form><?php endif;?>

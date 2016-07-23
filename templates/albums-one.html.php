@@ -21,14 +21,14 @@
             <div class="tab-pane active" id="standard">
               <div class="form-group">
                 <label for="title">Tytuł</label>
-                <input type="text" id="title" name="title" value="<?=$this->album->title();?>" class="form-control input-lg" placeholder="Tytuł" required/>
+                <input type="text" id="title" name="title" value="<?=$this->album->title();?>" class="form-control input-lg" placeholder="Tytuł" required>
               </div>
 
               <div class="form-group">
                 <label for="thumb">Miniatura</label>
                 <?php //$adminFields->pathInput($this->album->thumb(), 'thumb', 'form-control', 'Miniatura', 'thumb');?>
-                <input type="text" id="thumb" name="thumb" value="<?=$this->album->thumb();?>" placeholder="Miniatura" class="form-control"/>
-                <br/>
+                <input type="text" id="thumb" name="thumb" value="<?=$this->album->thumb();?>" placeholder="Miniatura" class="form-control">
+                <br>
                 <div class="row">
                   <div class="col-md-6">
                     <p class="text-muted">
@@ -45,13 +45,13 @@
 
               <div class="form-group">
                 <label for="album">Album</label>
-                <input type="text" id="album" name="album" value="<?=$this->album->album();?>" placeholder="Album" class="form-control"/>
+                <input type="text" id="album" name="album" value="<?=$this->album->album();?>" placeholder="Album" class="form-control">
                 <p class="text-muted">Adres albumu</p>
               </div>
 
               <div class="form-group">
                 <label for="photos">Liczba zdjęć</label>
-                <input type="number" min="0" id="photos" name="photos" value="<?=$this->album->photos();?>" placeholder="Liczba zdjęć" class="form-control"/>
+                <input type="number" min="0" id="photos" name="photos" value="<?=$this->album->photos();?>" placeholder="Liczba zdjęć" class="form-control">
                 <p class="text-muted">Liczba zdjęć w albumie</p>
               </div>
             </div>
@@ -61,20 +61,20 @@
 
               <div class="form-group">
                 <label for="date">Data wyświetlana</label>
-                <input type="text" id="date" name="date" value="<?=$this->album->date();?>" placeholder="Data wyświetlana" class="form-control"/>
+                <input type="text" id="date" name="date" value="<?=$this->album->date();?>" placeholder="Data wyświetlana" class="form-control">
                 <?php //$adminFields->datetimeInput($this->album->date(), 'date', 'form-control', 'date', 'Data wyświetlana');?> 
                 <p class="text-muted">Data dodania, wyświetlana odwiedzającym stronę. Choć można ją zmienić, zalecane jest by przedstawiała prawdziwą datę publikacji albumu.</p>
               </div>
 
               <div class="form-group">
                 <label for="slug">URL</label>
-                <input type="text" id="slug" name="slug" value="<?=$this->album->slug();?>" placeholder="URL" class="form-control"/>
+                <input type="text" id="slug" name="slug" value="<?=$this->album->slug();?>" placeholder="URL" class="form-control">
                 <p class="text-muted">Adres pod jakim będzie dostępny album (http://twojastrona.pl/artykuly/<?=$this->album->date('Y');?>/<?=$this->album->date('m');?>/<b>{URL)</b>. Jeśli zostawisz to pole puste, URL zostanie wygenerowany automatycznie.</p>
               </div>
 
               <div class="form-group">
                 <label for="author">Autor wyświetlany</label>
-                <input type="text" id="author" name="author" value="<?=$this->album->author(false);?>" placeholder="Autor wyświetlany" class="form-control"/>
+                <input type="text" id="author" name="author" value="<?=$this->album->author(false);?>" placeholder="Autor wyświetlany" class="form-control">
                 <p class="text-muted">Autor albumu. Gdy pole puste, wyświetlanie jako autora osoby która dodała album.</p>
               </div>
             </div>
@@ -95,21 +95,17 @@
             <p><i class="fa fa-calendar"></i> Data wyświetlana: <b><?=$this->album->date();?></b></p>
 
             <!-- checkbox -->
-            <hr/>
+            <hr>
             <label>
-            <input type="checkbox" name="published" class="minimal"<?=($this->album->isPublished()) ? ' checked' : '';?>/>&nbsp;
-            <?php if (!$this->album->isPublished()) {
-  ?>Zaznacz, by opublikować<?php 
-} else {
-  ?>Odznacz, by zamienić w szkic<?php 
-} ?>
+            <input type="checkbox" name="published" class="minimal"<?=($this->album->isPublished()) ? ' checked' : '';?>>&nbsp;
+            <?php if (!$this->album->isPublished()):?>Zaznacz, by opublikować<?php else: ?>Odznacz, by zamienić w szkic<?php endif;?>
             </label>
           </div>
           
           <div class="box-footer with-border">
             <?php if ('edit' === $this->templateType): ?><a href="<?=$this->album->delUrl();?>" class="btn text-red">Usuń</a>
-            <input name="update" type="submit" class="btn btn-primary btn-flat pull-right" value="Aktualizuj"/><?php else: ?>
-            <input name="add" type="submit" class="btn btn-primary btn-flat pull-right" value="Dodaj"/><?php endif; ?>
+            <input name="update" type="submit" class="btn btn-primary btn-flat pull-right" value="Aktualizuj"><?php else: ?>
+            <input name="add" type="submit" class="btn btn-primary btn-flat pull-right" value="Dodaj"><?php endif; ?>
           </div> 
         </div>
 
@@ -128,7 +124,7 @@
               <?php endforeach; ?> 
             </select>
             
-            <hr/>
+            <hr>
             <a href="<?=$this->album->addCategory();?>" target="_blank">Dodaj kategorię</a>
             <p class="text-muted">Po dodaniu kategorii, by wyświetliła się w menu powyżej, wymagane jest odświeżenie strony.</p>
           </div>

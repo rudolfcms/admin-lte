@@ -21,7 +21,7 @@
                         <div class="tab-pane active" id="standard">
                             <div class="form-group">
                                 <label for="title">Tytuł</label>
-                                <input type="text" id="title" name="title" value="<?=$this->category->title();?>" class="form-control input-lg" placeholder="Tytuł" required/>
+                                <input type="text" id="title" name="title" value="<?=$this->category->title();?>" class="form-control input-lg" placeholder="Tytuł" required>
                             </div>
                             <?php //$adminFields->textarea($this->category->content($parsed = false), 'content', 'form-control', 'content', 'Treść');?>
                             <label for="content">Treść</label>
@@ -33,19 +33,19 @@
 
                             <div class="form-group">
                                 <label for="description">Opis artykułu</label>
-                                <input type="text" id="description" name="description" value="<?=$this->category->description();?>" placeholder="Opis" class="form-control"/>
+                                <input type="text" id="description" name="description" value="<?=$this->category->description();?>" placeholder="Opis" class="form-control">
                                 <p class="text-muted">Jest widoczny w wynikach wyszukiwania. Staraj się jak najlepiej opisać zawartość artykułu. Opis i słowa kluczowe <b>nie mogą</b> być takie same.</p>
                             </div>
 
                             <div class="form-group">
                                 <label for="keywords">Słowa kluczowe</label>
-                                <input type="text" id="keywords" name="keywords" value="<?=$this->category->keywords();?>" placeholder="Słowa kluczowe" class="form-control"/>
+                                <input type="text" id="keywords" name="keywords" value="<?=$this->category->keywords();?>" placeholder="Słowa kluczowe" class="form-control">
                                 <p class="text-muted">Choć ten tag tak samo jak <u>opis</u> <b>nie wpływa</b> na pozycję strony w wynikach wyszukiwania, warto go uzupełnić słowami kluczowymi, z których mogą korzystać mniej znane wyszukiwarki.</p>
                             </div>
 
                             <div class="form-group">
                                 <label for="slug">URL</label>
-                                <input type="text" id="slug" name="slug" value="<?=$this->category->slug();?>" placeholder="URL" class="form-control"/>
+                                <input type="text" id="slug" name="slug" value="<?=$this->category->slug();?>" placeholder="URL" class="form-control">
                                 <p class="text-muted">Adres pod jakim będzie dostępny artykuł (http://twojastrona.pl/artykuly/kategorie/<b>{URL)</b>. Jeśli zostawisz to pole puste, URL zostanie wygenerowany automatycznie.</p>
                             </div>
                         </div>
@@ -63,8 +63,8 @@
                     
                     <div class="box-footer with-border">
                         <?php if ('edit' === $this->templateType): ?><a href="<?=$this->category->delUrl();?>" class="btn text-red">Usuń</a>
-                        <input name="update" type="submit" class="btn btn-primary btn-flat pull-right" value="Aktualizuj"/><?php else: ?>
-                        <input name="add" type="submit" class="btn btn-primary btn-flat pull-right" value="Dodaj"/><?php endif; ?>
+                        <input name="update" type="submit" class="btn btn-primary btn-flat pull-right" value="Aktualizuj"><?php else: ?>
+                        <input name="add" type="submit" class="btn btn-primary btn-flat pull-right" value="Dodaj"><?php endif; ?>
                     </div> 
                 </div>
 
@@ -79,12 +79,10 @@
                     <div class="box-body">
                         <p>Dodano: <b><?=$this->category->added();?></b></p>
                         <p>Dodał: <b><?=$this->category->adderFullName();?></b></p>
-                        <?php if ($this->category->isModified()) {
-    ?><p>Ostatnia modyfikacja: <b><?=$this->category->modified();
-    ?></b></p>
-                        <p>Ostatnio edytował: <b><?=$this->category->modifierFullName();
-    ?></b></p><?php 
-} ?>
+                        <?php if ($this->category->isModified());?> 
+                        <p>Ostatnia modyfikacja: <b><?=$this->category->modified(); ?></b></p>
+                        <p>Ostatnio edytował: <b><?=$this->category->modifierFullName(); ?></b></p>
+                        <?php endif;?> 
                         <p>Odsłon: <b><?=$this->category->views();?></b></p>
                         <p>zobacz: <b><a target="_blank" href="<?=$this->category->url();?>">link</a></b></p>
                     </div>
