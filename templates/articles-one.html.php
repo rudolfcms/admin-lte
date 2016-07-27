@@ -21,7 +21,7 @@
             <div class="tab-pane active" id="standard">
               <div class="form-group">
                 <label for="title">Tytuł</label>
-                <input type="text" id="title" name="title" value="<?=$this->article->title();?>" class="form-control input-lg" placeholder="Tytuł" required>
+                <input type="text" id="title" name="title" value="<?=$this->article->title('raw');?>" class="form-control input-lg" placeholder="Tytuł" required>
               </div>
               <?php //$adminFields->textarea($this->article->content($parsed = false), 'content', 'form-control', 'content', 'Treść');?>
               <label for="content">Treść</label>
@@ -33,13 +33,13 @@
 
               <div class="form-group">
                 <label for="description">Opis artykułu</label>
-                <input type="text" id="description" name="description" value="<?=$this->article->description();?>" placeholder="Opis" class="form-control">
+                <input type="text" id="description" name="description" value="<?=$this->article->description('raw');?>" placeholder="Opis" class="form-control">
                 <p class="text-muted">Jest widoczny w wynikach wyszukiwania. Staraj się jak najlepiej opisać zawartość artykułu. Opis i słowa kluczowe <b>nie mogą</b> być takie same.</p>
               </div>
 
               <div class="form-group">
                 <label for="keywords">Słowa kluczowe</label>
-                <input type="text" id="keywords" name="keywords" value="<?=$this->article->keywords();?>" placeholder="Słowa kluczowe" class="form-control">
+                <input type="text" id="keywords" name="keywords" value="<?=$this->article->keywords('raw');?>" placeholder="Słowa kluczowe" class="form-control">
                 <p class="text-muted">Choć ten tag tak samo jak <u>opis</u> <b>nie wpływa</b> na pozycję strony w wynikach wyszukiwania, warto go uzupełnić słowami kluczowymi, z których mogą korzystać mniej znane wyszukiwarki.</p>
               </div>
 
@@ -52,13 +52,13 @@
 
               <div class="form-group">
                 <label for="slug">URL</label>
-                <input type="text" id="slug" name="slug" value="<?=$this->article->slug();?>" placeholder="URL" class="form-control">
+                <input type="text" id="slug" name="slug" value="<?=$this->article->slug('raw');?>" placeholder="URL" class="form-control">
                 <p class="text-muted">Adres pod jakim będzie dostępny artykuł (http://twojastrona.pl/artykuly/<?=$this->article->date('Y');?>/<?=$this->article->date('m');?>/<b>{URL)</b>. Jeśli zostawisz to pole puste, URL zostanie wygenerowany automatycznie.</p>
               </div>
 
               <div class="form-group">
                 <label for="author">Autor wyświetlany</label>
-                <input type="text" id="author" name="author" value="<?=$this->article->author(false);?>" placeholder="Autor wyświetlany" class="form-control">
+                <input type="text" id="author" name="author" value="<?=$this->article->author('raw', false);?>" placeholder="Autor wyświetlany" class="form-control">
                 <p class="text-muted">Autor artykułu. Gdy pole puste, wyświetlanie jako autora osoby która dodała artykuł.</p>
               </div>
 
@@ -67,7 +67,7 @@
               <div class="form-group">
                 <label for="thumb">Miniatura</label>
                 <?php //$adminFields->pathInput($this->article->thumb(), 'thumb', 'form-control', 'Miniatura', 'thumb');?>
-                <input type="text" id="thumb" name="thumb" value="<?=$this->article->thumb();?>" placeholder="Miniatura" class="form-control">
+                <input type="text" id="thumb" name="thumb" value="<?=$this->article->thumb('raw');?>" placeholder="Miniatura" class="form-control">
                 <br>
                 <div class="row">
                   <div class="col-md-6">
@@ -78,14 +78,14 @@
                     </p>
                   </div>
                   <div class="col-md-6" id="thumbnail-preview">
-                    <?=$this->article->thumbnail(300, 250, false, '', 'https://placehold.it/300x250');?> 
+                    <?=$this->article->thumbnail(300, 250, false, $this->article->title('raw'), 'https://placehold.it/300x250');?> 
                   </div>
                 </div>
               </div>
 
               <div class="form-group">
                 <label for="album">Album</label>
-                <input type="text" id="album" name="album" value="<?=$this->article->album();?>" placeholder="Album" class="form-control">
+                <input type="text" id="album" name="album" value="<?=$this->article->album('raw');?>" placeholder="Album" class="form-control">
                 <p class="text-muted">Adres albumu powiązanego z artykułem. Pole puste = brak powiązania.</p>
               </div>
 
