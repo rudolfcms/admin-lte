@@ -1,4 +1,4 @@
-<?php include '_head.html.php';?>
+<?php include '_head.html.php'; ?>
 
 <?php if ($this->loop->isItems()): ?>
 <div class="box">
@@ -15,27 +15,28 @@
         <tr>
           <th>#</th>
           <th>title</th>
+          <th>views</th>
           <th>added</th>
-          <th>added</th>
-          <th>items</th>
+          <th>author</th>
           <th>actions</th>
         </tr>
       </thead>
       <tbody>
-        <?php while ($this->loop->haveItems()): $c = $this->loop->item(); ?><tr>
-          <th><?=$c->id();?></th>
-          <td><?=$c->title();?></td>
-          <td><?=$c->adderFullName();?></td>
-          <td><?=$c->added();?></td>
-          <td><?=$c->total();?></td>
+      <?php while ($this->loop->haveItems()): $a = $this->loop->item(); ?> 
+        <tr>
+          <th><?=$a->id();?></th>
+          <td><?=$a->title();?></td>
+          <td><?=$a->views();?></td>
+          <td><?=$a->date();?></td>
+          <td><?=$a->author();?></td>
           <td>
-            <a href="<?=$c->editUrl();?>" class="btn btn-success btn-xs btn-flat">
+            <a href="<?=$a->editUrl();?>" class="btn btn-block btn-success btn-xs btn-flat">
               <i class="fa fa-edit"></i> Edit
             </a>
-            <a href="<?=$c->url();?>" class="btn btn-info btn-xs btn-flat">
+            <a href="<?=$a->url();?>" class="btn btn-block btn-info btn-xs btn-flat">
               <i class="fa fa-eye"></i> View
             </a>
-            <a href="<?=$c->delUrl();?>" class="btn btn-warning btn-xs btn-flat">
+            <a href="<?=$a->delUrl();?>" class="btn btn-block btn-warning btn-xs btn-flat">
               <i class="fa fa-minus"></i> Delete
             </a>
           </td>
