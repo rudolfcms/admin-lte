@@ -15,7 +15,7 @@ include '_head.html.php';?>
           <div class="tab-pane active" id="standard">
             <div class="form-group">
               <label for="title">Tytuł</label>
-              <input type="text" id="title" name="title" value="<?=$c->title();?>" class="form-control input-lg" placeholder="Tytuł" required>
+              <input type="text" id="title" name="title" value="<?=$c->title('raw');?>" class="form-control input-lg" placeholder="Tytuł" required>
             </div>
             <?php //$adminFields->textarea($c->content($parsed = false), 'content', 'form-control', 'content', 'Treść');?>
             <label for="content">Treść</label>
@@ -23,19 +23,19 @@ include '_head.html.php';?>
           </div>
           <div class="tab-pane" id="more">
             <div class="form-group">
-              <label for="description">Opis artykułu</label>
-              <input type="text" id="description" name="description" value="<?=$c->description();?>" placeholder="Opis" class="form-control">
-              <p class="text-muted">Jest widoczny w wynikach wyszukiwania. Staraj się jak najlepiej opisać zawartość artykułu. Opis i słowa kluczowe <b>nie mogą</b> być takie same.</p>
+              <label for="description">Opis kategorii</label>
+              <input type="text" id="description" name="description" value="<?=$c->description('raw');?>" placeholder="Opis" class="form-control">
+              <p class="text-muted">Jest widoczny w wynikach wyszukiwania. Staraj się jak najlepiej opisać zawartość kategorii. Opis i słowa kluczowe <b>nie mogą</b> być takie same.</p>
             </div>
             <div class="form-group">
               <label for="keywords">Słowa kluczowe</label>
-              <input type="text" id="keywords" name="keywords" value="<?=$c->keywords();?>" placeholder="Słowa kluczowe" class="form-control">
+              <input type="text" id="keywords" name="keywords" value="<?=$c->keywords('raw');?>" placeholder="Słowa kluczowe" class="form-control">
               <p class="text-muted">Choć ten tag tak samo jak <u>opis</u> <b>nie wpływa</b> na pozycję strony w wynikach wyszukiwania, warto go uzupełnić słowami kluczowymi, z których mogą korzystać mniej znane wyszukiwarki.</p>
             </div>
             <div class="form-group">
               <label for="slug">URL</label>
-              <input type="text" id="slug" name="slug" value="<?=$c->slug();?>" placeholder="URL" class="form-control">
-              <p class="text-muted">Adres pod jakim będzie dostępny artykuł (http://twojastrona.pl/artykuly/kategorie/<b>{URL)</b>. Jeśli zostawisz to pole puste, URL zostanie wygenerowany automatycznie.</p>
+              <input type="text" id="slug" name="slug" value="<?=$c->slug('raw');?>" placeholder="URL" class="form-control">
+              <p class="text-muted">Adres pod jakim będzie dostępna kategoria (http://twojastrona.pl/artykuly/kategorie/<b>{URL)</b>. Jeśli zostawisz to pole puste, URL zostanie wygenerowany automatycznie.</p>
             </div>
           </div>
         </div>
