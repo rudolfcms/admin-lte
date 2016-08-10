@@ -100,12 +100,12 @@
             ['li_active' => 'active',
               'root_ul' => 'sidebar-menu',
               'sub_ul' => 'treeview-menu',
-              'li_with_ul' => 'treeview'],
+              'li_with_ul' => 'treeview', ],
             ['first_root_li' => '<li class="header" style="text-transform: uppercase">header</li>'],
             ['li_with_ul_a_text' => '<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>'],
             ['li_a_text-container' => 'span',
               'li_a_ico-container' => 'i',
-              'li_a_ico-class_base' => 'fa']
+              'li_a_ico-class_base' => 'fa', ]
           ); ?> 
         </section>
       </aside>
