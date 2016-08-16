@@ -104,7 +104,7 @@ include '_head.html.php'; ?>
           </div>
         </div>
         <div class="box-body">
-          <select class="form-control select2" name="category_id">
+          <select class="form-control select2" name="category_ID">
             <option value="0">(brak)</option>
             <?php foreach ($this->categories() as $key => $value): ?> 
               <option <?=($value['id'] == $a->categoryID()) ? 'selected="selected" ' : '';?>value="<?=$value['id'];?>"><?=$value['title'];?></option>
